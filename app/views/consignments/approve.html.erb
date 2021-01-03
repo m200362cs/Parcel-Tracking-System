@@ -13,35 +13,18 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.number_field :status, :value => @consignment.status%>
   </div>
-
   <div class="field">
-    <%= form.label :destination_pin %>
-    <%= form.number_field :destination_pin %>
+    <%= form.label :current_location %>
+    <%= form.number_field :current_location, :value => @consignment.current_location%>
   </div>
-
   <div class="field">
-    <%= form.label :source_pin %>
-    <%= form.number_field :source_pin %>
-  </div>
-
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
-
-  <div class="field">
-    <%= form.label :source_contact %>
-    <%= form.text_field :source_contact %>
-  </div>
-
-  <div class="field">
-    <%= form.label :destination_contact %>
-    <%= form.text_field :destination_contact %>
+    <%= form.label :next_location %>
+    <%= form.number_field :next_location, :value => @consignment.next_location%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit @buttontext %>
   </div>
 <% end %>

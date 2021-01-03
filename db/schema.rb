@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 2021_01_03_064733) do
     t.string "destination_contact"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_location"
+    t.integer "next_location"
+    t.datetime "pickup_schedulle"
+    t.datetime "delivery_schedulle"
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.string "trackid"
+    t.string "event"
+    t.string "user"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.integer "s_pin"
+    t.integer "d_pin"
+    t.integer "travel_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
